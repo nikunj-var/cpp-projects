@@ -152,6 +152,22 @@ node* insertatpos(node*head,int data,int pos){
 //     }
 //     return head;
 // }
+
+
+node* reverse(node* head){
+    node* temp=NULL;
+    node* curr=head;
+    while(curr){
+        temp=curr->prev;
+        curr->prev=curr->next;
+        curr->next=temp;
+        curr=curr->prev;
+    }
+    if(temp)
+        head=temp->prev;
+        return head;
+    
+}
 void print(node *head){
     node* temp=head;
     while(temp!=NULL){
@@ -168,16 +184,17 @@ int  main(){
     head= insertlinkedlist(head,40);
     head= insertlinkedlist(head,50);
     head= insertlinkedlist(head,60);
-    head=insertatbeginning(head,100);
-    head=insertatend(head,200);
-    cout<<"enter position where you want to add node";
-    cin>>pos;
-    head=insertatpos(head,500,pos);
+    // head=insertatbeginning(head,100);
+    // head=insertatend(head,200);
+    // cout<<"enter position where you want to add node";
+    // cin>>pos;
+    // head=insertatpos(head,500,pos);
     // head=deletefrombeg(head);
     // head=deletefromend(head);
     // cout<<"enter position where you want to delete node";
     // cin>>pos;
     // head=deletefrompos(head,pos);
+    head=reverse(head);
      print(head);
 
 }

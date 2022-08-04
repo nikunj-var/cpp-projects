@@ -50,13 +50,13 @@ int main(){
     push(22);
     push(33);
     push(44);
-     push(55);
+    push(55);
     push(66);
     display(top);
     cout<<"\npeek element of the stack"<<peek();
     pop();
     pop();
     cout<<endl;
-      display(top);
+    display(top);
     cout<<"\npeek element of the stack"<<peek();
 }

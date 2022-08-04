@@ -175,6 +175,7 @@ node* deletefrompos(node* head,int pos){
     }
     return head;
 }
+
 void print(node *head){
     node* temp=head;
     while(temp->next!=head){
@@ -199,9 +200,10 @@ int  main(){
     // head=insertatpos(head,500,pos);
     // head=deletefrombeg(head);
     // head=deletefromend(head);
-    cout<<"enter position where you want to delete node";
-    cin>>pos;
-    head=deletefrompos(head,pos);
+    // cout<<"enter position where you want to delete node";
+    // cin>>pos;
+    // head=deletefrompos(head,pos);
+    reverse(head);
     print(head);
 
 }

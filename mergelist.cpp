@@ -42,7 +42,7 @@ void print(node *head){
 /*node *mergelist(node* head1 ,node* head2){
     node* newnode=new node(0);
     node* temp;
-   temp=newnode;
+    temp=newnode;
     while(head1!=NULL && head1!=NULL){
         if(head1->data <= head2->data){
              temp->next=head1;
@@ -106,7 +106,27 @@ node* commonelement(node* head1,node* head2){
     }
     return temp->next;
 }
-
+node* alternatemerge(node* head1,node* head2){
+    node* newnode=new node(0);
+    node* temp=newnode;
+    while(head1!=NULL && head2!=NULL){
+        temp->next=head1;
+        head1=head1->next;
+        temp=temp->next;
+        temp->next=head2;
+        temp=temp->next;
+        head2=head2->next;
+    }
+    if(head1!=NULL){
+        temp->next=head1;
+    }
+    else{
+        temp->next=head2;
+    }
+    temp=newnode->next;
+    free(newnode);
+    return temp;
+}
 int  main(){
     node *head1=NULL,*head2=NULL;
     int pos;
@@ -124,13 +144,12 @@ int  main(){
     head2= insertlinkedlist(head2,3);
     head2= insertlinkedlist(head2,5);
     head2= insertlinkedlist(head2,40);
-    head2= insertlinkedlist(head2,50
-    
-    );
+    head2= insertlinkedlist(head2,50);
     head2= insertlinkedlist(head2,60);
    // print(head2);
     //cout<<"\nmerged list\n";
     // node* head=mergelist(head1,head2);
-    head=commonelement(head1,head2);
+ //   head=commonelement(head1,head2);
+    head=alternatemerge(head1,head2);
     print(head);
 }

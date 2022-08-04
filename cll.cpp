@@ -159,6 +159,22 @@ node* deletefrompos(node* head,int pos){
     }
     return head;
 }
+
+node* reverse(node* head){
+    node* temp=head;
+    node* nextnode=NULL,*prev=NULL,*curr=head;
+    do{
+        nextnode=curr->next;
+        curr->next=prev;
+        prev=curr;
+        curr=nextnode;
+    }while(curr!=head);
+
+    head->next=prev;
+    head=prev;
+    return head;
+}
+
 node* josephus(node* head){
     int m;
     cout<<"enter mth player";
@@ -206,7 +222,8 @@ int  main(){
     //cout<<"enter position where you want to delete node";
     //cin>>pos;
     //head=deletefrompos(head,pos);
-    head=josephus(head);
+   // head=josephus(head);
+    head=reverse(head);
     print(head);
 
 }

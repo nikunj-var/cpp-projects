@@ -165,7 +165,7 @@ node* modularfromend(node* head){
         return NULL;
     }
     else{
-        for(int i=0;i<k;i++){
+        for(i=0;i<k;i++){
             if(head){
                 head=head->next;
             }
@@ -174,10 +174,29 @@ node* modularfromend(node* head){
             }
         }
         while(head!=NULL){
-            
+            mod=mod->next;
+            head=head->next;
         }
     }
-
+    return mod;
+}
+node *sqrt(node* head){
+    node *sqr=NULL;
+    node *temp=head;
+    int i=1,j=1;
+    for(;temp!=NULL;temp=temp->next){
+        if(i==j*j){
+            if(sqr==NULL){
+                sqr=head;
+            }
+            else{
+                sqr=sqr->next;
+            }
+            j++;
+        }
+        i++;
+    }
+    return sqr;
 }
 int main(){
     node *head=NULL;
@@ -192,7 +211,10 @@ int main(){
    // head= deletenode(head,head->next->next);
    // middle(head);
    //head=evenodd(head);
-   head=modularfrombegin(head);
-   cout<<head->data;
+  // head=modularfrombegin(head);
+    //   head=modularfromend(head);
+    //      cout<<head->data;
+    head=sqrt(head);
+    cout<<head->data;
    //print(head);
 }

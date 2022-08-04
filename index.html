@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<style>
+    /* css reset */
+    body{
+        color:brown;
+        margin: 0px;
+        padding: 0px;
+        background: url(img.jpg);
+        height: 450px;
+    }
+    .left{
+        position: absolute;
+        left: 34px;
+        top: 20px;
+        display: inline-block;
+        border: 2px solid black;
+    }
+    .right{
+        display: inline-block;
+        position: absolute;
+        right:34px;
+        top: 20px;
+        border: 2px solid white;
+    }
+    .mid{
+        display: block;
+        width: 33%;
+        margin: 12px auto;
+        border: 4px solid grey;
+    }
+    .navbar{
+        display: inline-block;
+
+    }
+    .navbar li{
+        display: inline-block;
+        font-size: 25px;
+    }
+    .navbar li a{
+        color: white;
+        text-decoration: none;
+        padding: 34px 23px;
+    }
+    .navbar li a:hover, .navbar li a.active{
+        color:black;
+        text-decoration: underline;
+    }
+</style>
+<body>
+    <header class="header">
+        <!-- left for logo -->
+        <div class="left">
+           i sm left
+        </div>
+        <!-- mid for navbar -->
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#"></a>home</li>
+                <li><a href="#"></a>about us</li>
+                <li><a href="#"></a>contact us</li>
+                <li><a href="#"></a>phone</li>
+            </ul>
+        </div>
+        <!-- right for button -->
+        <div class="right">
+            i am right
+        </div>
+        
+    </header>
+</body>
+</html>
